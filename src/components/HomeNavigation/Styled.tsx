@@ -16,6 +16,7 @@ export const Wrapper = styled.div<Props>`
     @media (min-width: 1000px) {
         height: 75px;
     }
+    
 `;
 
 export const Button = styled.button`
