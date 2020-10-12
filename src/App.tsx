@@ -1,32 +1,21 @@
-import React, { useState } from 'react';
-import HomeNavigation from './components/HomeNavigation/HomeNavigation';
-import HamburgerMenu from './components/HamburgerMenu/HamburgerMenu';
+import React from 'react';
 import GlobalStyle from './GlobalStyle';
-import { MainNavigationValues } from './constants/MainNavigationValues';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import HamburgerButton from './components/HamburgerButton/HamburgerButton';
+import Home from './containers/Home/Home';
+import Premium from './containers/Premium/Premium';
 
 const App = () => {
-  const [isHamburgerOpen, changeHamburgerState] = useState<boolean>(false);
-
-  const changeHamburgerStateHandler = (): void => {
-    changeHamburgerState(!isHamburgerOpen);
-  };
-
   return (
     <>
       <GlobalStyle />
-      <HomeNavigation
-        changeHamburgerState={() => changeHamburgerStateHandler()}
-      />
-      <HamburgerMenu
-        mainData={MainNavigationValues}
-        isHamburgerOpen={isHamburgerOpen}
-      />
       <Router>
         <Switch>
+          <Route path={'/'}>
+            <Home />
+          </Route>
           <Route path={'/premium'}>
-            <HamburgerButton onClick={() => 'asd'} />
+            <Premium />
           </Route>
         </Switch>
       </Router>
