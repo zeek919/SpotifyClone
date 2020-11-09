@@ -1,20 +1,21 @@
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 interface IHamburgerMenu {
-    isHamburgerOpen: boolean
+  isHamburgerOpen: boolean;
 }
 
 export const Wrapper = styled.div<IHamburgerMenu>`
-top: 0;
-position:absolute;
-width: 100%;
-height: 100%;
-background-color: rgba(0,0,0,0.5);
-transition: 0.3s;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
 
-animation-name: ${props => props.isHamburgerOpen ? appearBackdrop : disappearBackdrop};
-animation-duration: 0.3s;
-animation-fill-mode: forwards;
+  animation-name: ${(props) =>
+    props.isHamburgerOpen ? appearBackdrop : disappearBackdrop};
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
 `;
 
 const disappearBackdrop = keyframes`
@@ -55,7 +56,7 @@ const disappearMenu = keyframes`
         width: 0%;
         opacity: 0;
 }
-`
+`;
 
 const appearMenu = keyframes`
     0%{
@@ -73,46 +74,63 @@ const appearMenu = keyframes`
 `;
 
 export const Menu = styled.div<IHamburgerMenu>`
-animation-name: ${props => props.isHamburgerOpen ? appearMenu : disappearMenu};
-animation-duration: 0.3s;
-animation-fill-mode: forwards;
-display: flex;
-justify-content: flex-start;
-padding-top: 50px;
-padding-left: 35px;
-align-items: flex-start;
-flex-direction: column;
-background-color: black;
-color: white;
-height: 100vh;
-width: 50%;
-position: absolute;
-top: 0;
-right: 0;
-color: white;
+  animation-name: ${(props) =>
+    props.isHamburgerOpen ? appearMenu : disappearMenu};
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 50px;
+  padding-left: 35px;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  height: 100vh;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
 
-& > * {
+  & > * {
     margin: 10px 0 10px 0;
-}
+  }
 `;
 
 export const Link = styled.button`
-font-weight: 700;
-font-size: 40px;
-border: none;
-background: none;
-color: white;
-&:hover {
-    color: #1DB954;
-}
-&:focus {
+  font-weight: 700;
+  font-size: 40px;
+  border: none;
+  background: none;
+  color: white;
+  &:hover {
+    color: #1db954;
+  }
+  &:focus {
     outline: none;
-}
+  }
 `;
 
 export const Line = styled.div`
-width: 25px;
-height: 2px; 
-background-color: white;
-margin: 30px 0 30px 8px;
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  margin: 30px 0 30px 8px;
+`;
+
+export const SpotifyAuthWrapper = styled.div`
+  & > button {
+    font-weight: 300;
+    font-size: 2.4em;
+    border: none;
+    background: none;
+    color: #d9dadc;
+    &:hover {
+      color: #1db954;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
 `;

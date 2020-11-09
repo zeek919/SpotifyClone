@@ -1,7 +1,6 @@
 import React from 'react';
 import GlobalStyle from './GlobalStyle';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import HamburgerButton from './components/HamburgerButton/HamburgerButton';
 import Home from './containers/Home/Home';
 import Premium from './containers/Premium/Premium';
 

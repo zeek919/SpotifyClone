@@ -1,9 +1,7 @@
 import React, { FunctionComponent } from 'react';
 
-interface IUserNavigationProps {}
-
-const UserNaviagtion: FunctionComponent = () => {
-  return;
+const UserNavigation: FunctionComponent = () => {
+  return <div>asda</div>;
 };
 
-export default UserNaviagtion;
+export default UserNavigation;
